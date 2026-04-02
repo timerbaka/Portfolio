@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio | Timur</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <canvas id="neural-bg"></canvas>
+
+    <nav>
+        <div class="nav-container">
+            <div class="logo">Portfolio <span>Timur</span></div>
+            <div class="links">
+                <a href="#about" data-i18n="nav_about">Můj příběh</a>
+                <a href="#projects" data-i18n="nav_projects">IT Projekty</a>
+                <a href="#life" data-i18n="nav_life">Život mimo IT</a>
+                <a href="#vision" data-i18n="nav_vision">Proč SSPŠ</a>
+            </div>
+            <div class="lang-switcher">
+                <button class="global-lang-btn active-lang" data-lang="cs">CZ</button>
+                <button class="global-lang-btn" data-lang="en">EN</button>
+                <button class="global-lang-btn" data-lang="ru">RU</button>
+            </div>
+        </div>
+    </nav>
+
+    <section id="home">
+        <h1>
+            <span id="greeting" data-i18n="hero_greeting">Ahoj, jsem budoucí </span><br>
+            <span class="typewriter-box"><span class="typewriter" id="typewriter"></span></span>
+        </h1>
+        <p data-i18n="hero_desc">Jsem hrdý Tatar pocházející z Petrohradu. Do Česka jsem se přestěhoval v červnu 2023 a za rok a půl jsem se z nuly naučil česky. Můj otec (Cloud Engineer) mi v 9 letech dal do ruky starý MacBook Pro a řekl: <em>„Tady ho máš, zkus přijít na to, jak funguje.“</em> Od té doby je IT mým životním směrem.</p>
+        
+       <div class="badges">
+            <button class="badge local-lang-btn active-local-lang" data-local-lang="cs" data-i18n="badge_cs">🇨🇿 Čeština</button>
+            <button class="badge local-lang-btn" data-local-lang="tt" data-i18n="badge_tt">🇮🇷 Tatarština</button>
+            <button class="badge local-lang-btn" data-local-lang="ru" data-i18n="badge_ru">🇷🇺 Ruština</button>
+            <button class="badge local-lang-btn" data-local-lang="en" data-i18n="badge_en">🇬🇧 Angličtina</button>
+            <button class="badge local-lang-btn" data-local-lang="de" data-i18n="badge_de">🇩🇪 Němčina</button>
+            <span class="badge" data-i18n="hero_target">Cíl: Čínština</span>
+        </div>
+    </section>
+
+    <section id="about">
+        <h2 data-i18n="about_title">Moje IT Cesta a Vzdělání</h2>        
+        <div class="achievements-grid">
+            <div class="achievement-card">
+                <div class="achievement-header">
+                    <div class="achievement-icon">🎓</div>
+                    <h4 data-i18n="ach_1_title">Univerzita ITMO (2021-2022)</h4>
+                </div>
+                <p data-i18n="ach_1_desc">Absolvoval jsem tři intenzivní 96hodinové kurzy zaměřené na hardware/software, kancelářské aplikace a webdesign.</p>
+            </div>
+
+            <div class="achievement-card">
+                <div class="achievement-header">
+                    <div class="achievement-icon">🏆</div>
+                    <h4>WorldSkills (2021)</h4>
+                </div>
+                <p data-i18n="ach_2_desc">Zúčastnil jsem se této prestižní soutěže a v městském kole (kategorie do 16 let) jsem obsadil skvělé 8. místo.</p>
+            </div>
+
+            <div class="achievement-card">
+                <div class="achievement-header">
+                    <div class="achievement-icon">🤖</div>
+                    <h4 data-i18n="ach_3_title">Hardware projekt (2021)</h4>
+                </div>
+                <p data-i18n="ach_3_desc">Sestrojil jsem školní projekt na bázi Arduina určený ke sběru environmentálních dat (teplota, vlhkost, osvětlení).</p>
+            </div>
+
+            <div class="achievement-card">
+                <div class="achievement-header">
+                    <div class="achievement-icon">🕶️</div>
+                    <h4 data-i18n="ach_4_title">AR Aplikace „БуквARик“ (2023)</h4>
+                </div>
+                <p data-i18n="ach_4_desc">Můj absolventský projekt v 9. třídě. Aplikace v Kotlinu (Android) s využitím rozšířené reality vizualizovala složité fyzikální jevy v prostoru.</p>
+            </div>
+        </div>
+        
+        <div class="radar-container">
+            <h3 style="text-align: center; margin-bottom: 1rem;" data-i18n="radar_title">Můj Skillset (Radar)</h3>
+            <canvas id="skillsChart"></canvas>
+        </div>
+    </section>
+
+    <section id="projects">
+        <h2 data-i18n="proj_title">Co aktuálně tvořím</h2>
+        <div class="grid">
+            <div class="card tilt-card">
+                <h3 data-i18n="proj_1_title">Vlastní AI asistent (LLM)</h3>
+                <p data-i18n="proj_1_desc">Aplikace s UI napsaným v <strong>C# (Avalonia MVVM)</strong>. Pod kapotou běží lokální jazykový model, se kterým komunikuji přes HTTP požadavky. Naprogramoval jsem pro něj oddělenou paměť a systém promptů. Dělám to hlavně proto, abych do hloubky pochopil architekturu LLM modelů.</p>
+            </div>
+            <div class="card tilt-card">
+                <h3 data-i18n="proj_2_title">Fyzikální hra v Godot Engine</h3>
+                <p data-i18n="proj_2_desc">S kamarádem vyvíjíme hru. <strong>Koncept:</strong> Hráč musí před cestou na chatu naskládat do kufru starého „Žiguli“ 3x více věcí, než se tam vejde. Věci do sebe narážejí, z balkonu na vás křičí matka a běží časovač. Učíme se na tom práci v enginu.</p>
+            </div>
+            <div class="card tilt-card">
+                <h3 data-i18n="proj_3_title">AR Aplikace „БуквARик“</h3>
+                <p data-i18n="proj_3_desc">Projekt v <strong>Kotlinu</strong> pro Android. Vytvořil jsem aplikaci s rozšířenou realitou (AR). Aplikace vizualizovala složité fyzikální jevy v prostoru, aby byly snáze pochopitelné pro mě i spolužáky.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="life">
+        <h2 data-i18n="life_title">Život mimo obrazovku</h2>        
+        <div class="grid">
+            <div class="card tilt-card">
+                <h3 data-i18n="life_1_title">Věda a ekologie</h3>
+                <p data-i18n="life_1_desc">Účastnil jsem se skutečných archeologických vykopávek z období paleolitu v Brjanské oblasti, kde jsem se setkal se známým antropologem S. Drobyshevským. Také jsem si zahrál hlavní roli v sociálním spotu o důležitosti recyklace baterií a ochraně planety.</p>
+            </div>
+            
+            <div class="card tilt-card">
+                <h3 data-i18n="life_2_title">Hudba a umění</h3>
+                <p data-i18n="life_2_desc">Moje maminka je kurátorkou v petrohradské Kunstkameře, takže mám blízko k muzeím a historii. 6 let jsem hrál na violoncello, několik let na klavír a chtěl bych se naučit na kytaru. Více než 10 let jsem také zpíval a koncertoval (i ve Finsku) s lidovým sborem "GromGora".</p>
+            </div>
+            
+            <div class="card tilt-card">
+                <h3 data-i18n="life_3_title">Fotografie</h3>
+                <p data-i18n="life_3_desc">Dva roky jsem byl členem fotoklubu. Miluji osamocené cesty do přírody, kde fotím krajiny.</p>
+            </div>
+            
+            <div class="card tilt-card">
+                <h3 data-i18n="life_4_title">Sport a cestování</h3>
+                <p data-i18n="life_4_desc">Udržuji se v kondici (chodím do posilovny, mám stříbrný odznak ruského programu fyzické zdatnosti GTO). Jezdil jsem na kajaku v Karélii a účastnil se cyklo-festivalu. Procestoval jsem mnoho zemí a mým snem je Japonsko.</p>
+            </div>
+        </div>
+
+        <h3 style="margin-top: 4rem; text-align: center;" data-i18n="fav_title">Co mě baví:</h3>
+        <div class="favorites-grid">
+            <div class="fav-item tilt-card">
+                <h4 data-i18n="fav_games">Hry</h4>
+                <ul>
+                    <li>Firewatch</li>
+                    <li>Coffee Talk</li>
+                    <li>Chrono Trigger</li>
+                    <li>Metro (2033,Exodus)</li>
+                    <li>Max Payne (1,2)</li>
+                    <li>Mafia (1, 2)</li>
+                    <li>Half-Life (1,2,3?)</li>
+                    <li>Soma</li>
+                    <li>Witcher (1,2)</li>
+                    <li>GTA (3,VC,SA,4)</li>
+                    <li>Cyberpunk 2077</li>
+                    <li>Everlasting summer </li>
+                    <li>Cyberpunk 2077</li>
+                    <li>Euro Truck Simulator 2</li>
+                    <li>Chrono trigger</li>
+                    <li>Final Fantasy (3,6,9) </li>
+                    <li>Pacific Drive</li>
+                </ul>
+            </div>
+            <div class="fav-item tilt-card">
+                <h4 data-i18n="fav_anime">Anime</h4>
+                <ul>
+                    <li>Made in Abyss</li>
+                    <li>Mushishi</li>
+                    <li>Frieren</li>
+                    <li>Call of the Night</li>
+                    <li>The Apothecary Diaries</li>
+                    <li>Monogatari Series</li>
+                    <li>Princess Mononoke</li>
+                    <li>Kowloon Generic Romance</li>
+                    <li>Your Name</li>
+                    <li>Solo Camping for Two</li>
+                    <li>My Dress-Up Darling</li>
+                </ul>
+            </div>
+            <div class="fav-item tilt-card">
+                <h4 data-i18n="fav_books">Knihy</h4>
+                <ul>
+                    <li>J. Herriot: "Every Living Thing"</li>
+                    <li>F. Dostojevskij: "Crime and Punishment"</li>
+                    <li>D. Glukhovsky: "Metro 2033"</li>
+                    <li>L. Tolstoj: "Anna Karenina"</li>
+                    <li>B. Němcová: "Babička"</li>
+                    <li>A.B. Strugatsky: "Roadside Picnic"</li>
+                    <li>M. Bulgakov: "The Heart of a Dog"</li>
+                    <li>E. Remarque: "All Quiet on the Western Front"</li>
+                    <li>K. Sergienko: "Take Us Away, Pegasus!"</li>
+                    <li>H. Lee: "To Kill a Mockingbird"</li>
+                    <li>Unix and Linux system administration handbook</li>
+
+
+                </ul>
+            </div>
+            <div class="fav-item tilt-card">
+                <h4 data-i18n="fav_movies">Hudba</h4>
+                <ul>
+                    <li>Sabaton</li>
+                    <li>Powerwolf</li>
+                    <li>Ghost</li>
+                    <li>Faun</li>
+                    <li>Evanescence</li>
+                    <li>Akira Yamaoka</li>
+                    <li>Korol i Shut</li>
+                    <li>Yasunori Mitsuda</li>
+                    <li>Blind Guardian</li>
+                    <li>Pornofilmy</li>
+                    <li>Nightwish</li>
+                    <li>Grazhdanskaya Oborona</li>
+                    <li>Alestorm</li>
+                    <li>Korpiklaani</li>
+                    <li>Eluveitie</li>
+                    <li>Dio</li>
+                    <li>Alina Gingertail</li>
+                    <li>Melnitsa</li>
+                    <li>Oleg Medvedev</li>
+                </ul>
+            </div>
+        </div>
+
+<div style="margin-top: 4rem; background: var(--card-bg); border-radius: 12px; border: 1px solid #334155; padding: 0 2rem;">
+            <button class="accordion" style="border-bottom: none; text-align: center; padding: 2rem 0;" data-i18n="gal_title">Střípky z mého života</button>
+            <div class="panel">
+                <div class="panel-content" style="padding-top: 0;">
+                    <div class="gallery" style="margin-top: 0;">
+            <div class="gallery-item"><img src="Photos/France.jpeg" alt=""><p data-i18n="gal_1">Cestování po Francii</p></div>
+            <div class="gallery-item"><img src="Photos/gds.jpeg" alt=""><p data-i18n="gal_2">Game Developers Session 2025</p></div>
+            <div class="gallery-item"><img src="Photos/film.PNG" alt=""><p data-i18n="gal_3">Sociální film:"Batérie"</p></div>
+            <div class="gallery-item"><img src="Photos/zsd.jpeg" alt=""><p data-i18n="gal_4">ZSD-fest</p></div>
+            <div class="gallery-item"><img src="Photos/fotak.jpeg" alt=""><p data-i18n="gal_1">Cestování po Francii</p></div>
+            <div class="gallery-item"><img src="Photos/gds.jpeg" alt=""><p data-i18n="gal_2">Game Developers Session 2025</p></div>
+            <div class="gallery-item"><img src="Photos/film.PNG" alt=""><p data-i18n="gal_3">Sociální film:"Batérie"</p></div>
+            <div class="gallery-item"><img src="Photos/zsd.jpeg" alt=""><p data-i18n="gal_4">ZSD-fest</p></div>
+            <div class="gallery-item"><img src="Photos/France.jpeg" alt=""><p data-i18n="gal_1">Cestování po Francii</p></div>
+            <div class="gallery-item"><img src="Photos/gds.jpeg" alt=""><p data-i18n="gal_2">Game Developers Session 2025</p></div>
+            <div class="gallery-item"><img src="Photos/film.PNG" alt=""><p data-i18n="gal_3">Sociální film:"Batérie"</p></div>
+            <div class="gallery-item"><img src="Photos/zsd.jpeg" alt=""><p data-i18n="gal_4">ZSD-fest</p></div>
+                </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="vision">
+        <h2 data-i18n="vis_title">Proč Smíchovská SPŠ?</h2>
+        <p data-i18n="vis_desc">Do budoucna plánuji studovat IT na české univerzitě a stát se špičkovým backend vývojářem. Hledám školu, která je moderní, kde učí mladí odborníci z praxe a kde panuje tah na branku. Vím, že na Smíchovské SPŠ funguje systém <strong>studentských lektorů</strong> – to je přesně to, co mě zajímá. Rád lidem vysvětluji látku, kterou sám pochopím, a baví mě tvořit výukové materiály. Rád bych se do tohoto systému zapojil.</p>
+
+        <div class="faq-section">
+            <h3 style="color: var(--text-color); margin-bottom: 1.5rem;" data-i18n="faq_title">Často kladené dotazy (Q&A)</h3>
+            
+            <button class="accordion" data-i18n="faq_1_q">Proč chci odejít z aktuální školy (COPAG)?</button>
+            <div class="panel">
+                <div class="panel-content" data-i18n="faq_1_a">
+                    Na aktuální škole jsem se naučil užitečné základy elektrotechniky a hardwaru, za což jsem rád. Plně jsem si ale uvědomil, že můj hlavní směr je čisté IT a vývoj softwaru. Na současné škole mi navíc trochu chybí proaktivní komunita studentů – chci být v prostředí, kde lidé IT oborem žijí a vzájemně se motivují, což vaše škola perfektně splňuje.
+                </div>
+            </div>
+
+            <button class="accordion" data-i18n="faq_2_q">Kde mám ukázky kódu a proč je můj GitHub prázdný?</button>
+            <div class="panel">
+                <div class="panel-content" data-i18n="faq_2_a">
+                    To je naprosto oprávněná otázka. Doteď jsem většinu svých projektů (od AR aplikace přes experimenty s PHP) dělal lokálně "do šuplíku", abych pochopil technologii. Aktuálně ale měním přístup. Jak hru v Godotu, tak C# AI asistenta nyní připravuji k nahrání na GitHub, protože si uvědomuji, že open-source a viditelné portfolio je pro moderního vývojáře základ.
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
