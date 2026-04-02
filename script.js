@@ -331,4 +331,28 @@ document.addEventListener("DOMContentLoaded", () => {
         animateBg();
         window.addEventListener('resize', () => { width = canvas.width = window.innerWidth; height = canvas.height = window.innerHeight; });
     }
+    // Находим все картинки в нашей галерее
+    const galleryImages = document.querySelectorAll('.gallery-item img');
+
+    galleryImages.forEach(img => {
+        // Когда мышка двигается по картинке
+        img.addEventListener('mousemove', function(e) {
+            // Получаем размеры и позицию самой картинки
+            const rect = e.target.getBoundingClientRect();
+            
+            // Считаем координаты мыши в процентах (от 0% до 100%)
+            const x = ((e.clientX - rect.left) / rect.width) * 100;
+            const y = ((e.clientY - rect.top) / rect.height) * 100;
+            
+            // Передаем координаты в наш CSS
+            e.target.style.setProperty('--x', `${x}%`);
+            e.target.style.setProperty('--y', `${y}%`);
+        });
+
+        // Когда мышка уходит, возвращаем фокус в центр
+        img.addEventListener('mouseleave', function(e) {
+            e.target.style.setProperty('--x', '50%');
+            e.target.style.setProperty('--y', '50%');
+        });
+    });
 });
