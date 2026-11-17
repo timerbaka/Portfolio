@@ -83,7 +83,22 @@ nav .links a:hover {
 /* Переключатель языков в шапке */
 .lang-switcher {
     display: flex;
+    align-items: center;
     gap: 0.5rem;
+}
+.gh-link {
+    display: flex;
+    margin-left: 0.5rem;
+    color: #cbd5e1;
+    transition: color 0.3s, transform 0.3s;
+}
+.gh-link svg {
+    width: 1.6rem;
+    height: 1.6rem;
+}
+.gh-link:hover {
+    color: #fff;
+    transform: translateY(-2px);
 }
 .global-lang-btn {
     background: transparent;
@@ -470,5 +485,105 @@ span.badge {
     }
     #home {
         padding-top: 10rem;
+    }
+}
+
+/* ==========================================
+   Пасхалка: CRT-режим (Konami-код, см. script.js)
+   ========================================== */
+#crt-toast {
+    position: fixed;
+    bottom: 2rem;
+    left: 50%;
+    transform: translate(-50%, 1rem);
+    z-index: 3000;
+    padding: 0.8rem 1.4rem;
+    border: 1px solid #33ff66;
+    border-radius: 6px;
+    background: #020a02;
+    color: #33ff66;
+    font-family: ui-monospace, Menlo, Consolas, "Courier New", monospace;
+    text-shadow: 0 0 6px #33ff66;
+    opacity: 0;
+    pointer-events: none;
+    transition:
+        opacity 0.3s,
+        transform 0.3s;
+}
+#crt-toast.show {
+    opacity: 1;
+    transform: translate(-50%, 0);
+}
+
+body.crt {
+    --bg-color: #020a02;
+    --text-color: #b8ffc8;
+    --accent-color: #33ff66;
+    --accent-hover: #88ffaa;
+    --card-bg: #041404;
+    --badge-bg: #062406;
+    font-family: ui-monospace, Menlo, Consolas, "Courier New", monospace;
+    text-shadow: 0 0 4px rgba(51, 255, 102, 0.45);
+}
+body.crt p,
+body.crt li,
+body.crt .panel-content,
+body.crt nav .links a,
+body.crt .global-lang-btn,
+body.crt .gh-link {
+    color: #8fe6a2;
+}
+body.crt nav {
+    background: rgba(2, 10, 2, 0.95);
+}
+body.crt *,
+body.crt h2::after {
+    border-color: #1d5c2b;
+}
+body.crt h2::after {
+    background: #1d5c2b;
+}
+body.crt .achievement-card {
+    border-left-color: var(--accent-color);
+}
+body.crt .achievement-card,
+body.crt .fav-item,
+body.crt .radar-container {
+    background: rgba(4, 20, 4, 0.7);
+}
+body.crt .gallery-item img {
+    filter: grayscale(100%) sepia(100%) hue-rotate(70deg) saturate(3);
+}
+body.crt .gallery-item img:hover {
+    filter: none;
+}
+/* сканлайны и лёгкое мерцание */
+body.crt::after {
+    content: "";
+    position: fixed;
+    inset: 0;
+    z-index: 2000;
+    pointer-events: none;
+    background: repeating-linear-gradient(
+        to bottom,
+        rgba(0, 0, 0, 0.25) 0,
+        rgba(0, 0, 0, 0.25) 1px,
+        transparent 1px,
+        transparent 3px
+    );
+    animation: crt-flicker 4s infinite;
+}
+@keyframes crt-flicker {
+    0%,
+    100% {
+        opacity: 0.9;
+    }
+    50% {
+        opacity: 1;
+    }
+}
+@media (prefers-reduced-motion: reduce) {
+    body.crt::after {
+        animation: none;
     }
 }

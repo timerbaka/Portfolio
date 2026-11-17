@@ -262,6 +262,13 @@ document.addEventListener("DOMContentLoaded", () => {
     // ==========================================
     // 5. ИНТЕРАКТИВНЫЙ ФОН "НЕЙРОСЕТЬ"
     // ==========================================
+    // Barvy pozadí a radaru (mění se v CRT režimu, viz sekce 7)
+    const palette = {
+        normal: { dot: '96, 165, 250', line: '59, 130, 246' },
+        crt: { dot: '102, 255, 136', line: '51, 255, 102' },
+    };
+    let colors = palette.normal;
+
     const canvas = document.getElementById('neural-bg');
     if(canvas) {
         const c = canvas.getContext('2d');
@@ -287,7 +294,7 @@ document.addEventListener("DOMContentLoaded", () => {
             }
             draw() {
                 c.beginPath(); c.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
-                c.fillStyle = 'rgba(96, 165, 250, 0.5)'; c.fill();
+                c.fillStyle = `rgba(${colors.dot}, 0.5)`; c.fill();
             }
         }
 
@@ -303,7 +310,7 @@ document.addEventListener("DOMContentLoaded", () => {
                     const dx = particles[j].x - particles[k].x; const dy = particles[j].y - particles[k].y;
                     const distance = Math.sqrt(dx * dx + dy * dy);
                     if (distance < 120) {
-                        c.beginPath(); c.strokeStyle = `rgba(59, 130, 246, ${1 - distance/120})`;
+                        c.beginPath(); c.strokeStyle = `rgba(${colors.line}, ${1 - distance/120})`;
                         c.lineWidth = 0.5; c.moveTo(particles[j].x, particles[j].y); c.lineTo(particles[k].x, particles[k].y); c.stroke();
                     }
                 }
@@ -311,7 +318,7 @@ document.addEventListener("DOMContentLoaded", () => {
                     const dxm = particles[j].x - mouse.x; const dym = particles[j].y - mouse.y;
                     const distMouse = Math.sqrt(dxm * dxm + dym * dym);
                     if (distMouse < 150) {
-                        c.beginPath(); c.strokeStyle = `rgba(96, 165, 250, ${1 - distMouse/150})`;
+                        c.beginPath(); c.strokeStyle = `rgba(${colors.dot}, ${1 - distMouse/150})`;
                         c.lineWidth = 1; c.moveTo(particles[j].x, particles[j].y); c.lineTo(mouse.x, mouse.y); c.stroke();
                     }
                 }
@@ -347,4 +354,49 @@ document.addEventListener("DOMContentLoaded", () => {
             e.target.style.setProperty('--y', '50%');
         });
     });
+
+    // ==========================================
+    // 7. ПАСХАЛКА: KONAMI-КОД → CRT-РЕЖИМ
+    // ↑ ↑ ↓ ↓ ← → ← → B A
+    // ==========================================
+    const konami = ['ArrowUp', 'ArrowUp', 'ArrowDown', 'ArrowDown', 'ArrowLeft', 'ArrowRight', 'ArrowLeft', 'ArrowRight', 'KeyB', 'KeyA'];
+    let konamiPos = 0;
+    const toast = document.getElementById('crt-toast');
+    let toastTimer;
+
+    function setRadarColors(rgb) {
+        if (!myRadarChart) return;
+        const ds = myRadarChart.data.datasets[0];
+        ds.backgroundColor = `rgba(${rgb.line}, 0.25)`;
+        ds.borderColor = `rgba(${rgb.line}, 1)`;
+        ds.pointBackgroundColor = `rgba(${rgb.dot}, 1)`;
+        ds.pointHoverBorderColor = `rgba(${rgb.dot}, 1)`;
+        myRadarChart.update();
+    }
+
+    function toggleCrt() {
+        const on = document.body.classList.toggle('crt');
+        colors = on ? palette.crt : palette.normal;
+        setRadarColors(colors);
+        toast.textContent = on ? '> CRT MODE: ON_' : '> CRT MODE: OFF_';
+        toast.classList.add('show');
+        clearTimeout(toastTimer);
+        toastTimer = setTimeout(() => toast.classList.remove('show'), 2500);
+    }
+
+    document.addEventListener('keydown', (e) => {
+        const key = e.code; // fyzická klávesa → funguje v CZ/RU/EN rozložení
+        if (key === konami[konamiPos]) {
+            konamiPos++;
+            if (konamiPos === konami.length) {
+                konamiPos = 0;
+                toggleCrt();
+            }
+        } else {
+            konamiPos = key === konami[0] ? 1 : 0;
+        }
+    });
+
+    // Nápověda pro zvědavce, kteří otevřou DevTools
+    console.log('%c> Zkuste ↑ ↑ ↓ ↓ ← → ← → B A', 'color:#33ff66;background:#020a02;font:14px monospace;padding:4px 8px');
 });
