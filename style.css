@@ -11,6 +11,9 @@
     box-sizing: border-box;
     margin: 0;
     padding: 0;
+}
+
+html {
     scroll-behavior: smooth;
 }
 
@@ -33,7 +36,7 @@ body {
     pointer-events: none;
 }
 
-/* Навигация с растяжкой на 2K/4K */
+/* Навигация */
 nav {
     position: fixed;
     width: 100%;
@@ -43,7 +46,7 @@ nav {
     border-bottom: 1px solid #334155;
 }
 .nav-container {
-    max-width: 92%; /* Занимает 92% от ЛЮБОГО монитора */
+    max-width: 92%;
     margin: 0 auto;
     padding: 1.5rem 0;
     display: flex;
@@ -103,27 +106,27 @@ nav .links a:hover {
     color: #fff;
 }
 
-/* Секции - растягиваем на весь экран */
+/* Секции */
 section {
     padding: 6rem 0 4rem;
-    max-width: 92%; /* Занимает 92% от ЛЮБОГО монитора */
+    max-width: 92%;
     margin: 0 auto;
     position: relative;
     z-index: 10;
+    scroll-margin-top: 4rem; /* чтобы заголовок не прятался под фиксированным меню */
 }
 
-/* Убираем огромную дыру на главном экране */
 #home {
-    min-height: auto; /* Убрали жесткую привязку к высоте экрана */
     display: flex;
     flex-direction: column;
     justify-content: center;
-    padding-top: 12rem; /* Отступ от меню */
-    padding-bottom: 2rem; /* Минимальный отступ до следующей секции */
+    padding-top: 12rem; /* отступ от меню */
+    padding-bottom: 2rem;
 }
 #about {
     padding-top: 0;
-} /* Секция сразу подтягивается наверх */
+    scroll-margin-top: 8rem;
+}
 
 h1 {
     font-size: 3.5rem;
@@ -204,7 +207,7 @@ span.badge {
     cursor: default;
 }
 
-/* Сетки карточек (увеличил ширину под 2K) */
+/* Сетки карточек */
 .grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
@@ -274,10 +277,10 @@ span.badge {
     color: #cbd5e1;
 }
 
-/* Радар: отодвинул от ачивок */
+/* Радар */
 .radar-container {
-    max-width: 650px; /* Чуть увеличил сам график для 2K */
-    margin: 6rem auto 3rem; /* 6rem сверху - огромный отступ от ачивок! */
+    max-width: 650px;
+    margin: 6rem auto 3rem;
     background: rgba(30, 41, 59, 0.7);
     padding: 2rem;
     border-radius: 12px;
@@ -285,21 +288,15 @@ span.badge {
     position: relative;
     z-index: 10;
 }
+.radar-title {
+    text-align: center;
+    margin-bottom: 1rem;
+}
 
 /* Интересы */
-.fav-item ul {
-    list-style: none;
-    padding-left: 0;
-    color: #cbd5e1;
-    font-size: 0.95rem;
-    /* Включаем умную сетку */
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
-    gap: 0.4rem 1rem; /* Отступы: 0.4rem по вертикали, 1rem по горизонтали */
-}
-.fav-item ul li {
-    margin-bottom: 0;
-    word-break: break-word; /* Если название слишком длинное, оно аккуратно перенесется */
+.fav-title {
+    margin-top: 4rem;
+    text-align: center;
 }
 .fav-item {
     background: rgba(30, 41, 59, 0.6);
@@ -320,48 +317,49 @@ span.badge {
 }
 .fav-item ul {
     list-style: none;
-    padding-left: 0;
     color: #cbd5e1;
     font-size: 0.95rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    gap: 0.4rem 1rem;
 }
 .fav-item ul li {
     margin-bottom: 0.3rem;
+    word-break: break-word;
 }
 
-/* Галерея: переходим от Grid к колонкам (Pinterest style) */
+/* Галерея (колонки в стиле Pinterest) */
+.gallery-box {
+    margin-top: 4rem;
+    background: var(--card-bg);
+    border-radius: 12px;
+    border: 1px solid #334155;
+    padding: 0 2rem;
+}
+.accordion.gallery-toggle {
+    border-bottom: none;
+    text-align: center;
+    padding: 2rem 0;
+}
+.panel-content.gallery-content {
+    padding-top: 0;
+}
+
 .gallery {
-    /* Ширина одной колонки. Браузер сам решит, сколько колонок влезет на экран */
-    column-width: 300px; 
+    column-width: 300px; /* браузер сам решает, сколько колонок влезет */
     column-gap: 1.5rem;
-    margin-top: 1.5rem;
 }
 
 .gallery-item {
     border: 1px solid #334155;
     border-radius: 12px;
-    overflow: hidden;
+    overflow: hidden; /* лупа не выходит за скруглённые края */
     display: flex;
     flex-direction: column;
-    box-sizing: border-box;
-    /* ВАЖНО: не дает карточке разорваться на две колонки */
-    break-inside: avoid; 
-    /* Отступ снизу, так как в колонках gap работает только по бокам */
-    margin-bottom: 1.5rem; 
-    /* Чтобы эффект лупы не выходил за границы закругленной карточки */
-    position: relative; 
+    break-inside: avoid; /* карточка не разрывается между колонками */
+    margin-bottom: 1.5rem; /* gap в колонках работает только по горизонтали */
+    position: relative;
 }
-
-.gallery-item img {
-    width: 100%;
-    /* ВАЖНО: высота теперь auto. Картинка покажет себя целиком с родными пропорциями! */
-    height: auto; 
-    display: block;
-    transform-origin: var(--x, 50%) var(--y, 50%);
-    transition: transform 0.3s ease-out, filter 0.4s ease; 
-    cursor: crosshair;
-    filter: grayscale(30%);
-}
-
 .gallery-item:hover {
     border-color: var(--accent-color);
     box-shadow:
@@ -369,32 +367,34 @@ span.badge {
         inset 0 0 10px rgba(59, 130, 246, 0.2);
 }
 
+.gallery-item img {
+    width: 100%;
+    height: auto; /* родные пропорции фото */
+    display: block;
+    transform-origin: var(--x, 50%) var(--y, 50%);
+    transition:
+        transform 0.3s ease-out,
+        filter 0.4s ease;
+    cursor: crosshair;
+    filter: grayscale(30%);
+}
 .gallery-item img:hover {
-    /* Сделали зум поменьше: 1.4 вместо 1.8 */
-    transform: scale(1.4); 
+    transform: scale(1.4);
     filter: grayscale(0%);
 }
 
-.gallery-item p {
-    margin: 0;
+.gallery-item figcaption {
     padding: 1rem;
     font-size: 0.95rem;
     color: #94a3b8;
     font-style: italic;
     text-align: center;
-    background-color: #0f172a;
-    position: relative; 
+    background-color: var(--bg-color);
+    position: relative;
     z-index: 2;
 }
 
-/* FAQ */
-.faq-section {
-    margin-top: 4rem;
-    background: var(--card-bg);
-    padding: 2rem;
-    border-radius: 12px;
-    border: 1px solid #334155;
-}
+/* Аккордеон */
 .accordion {
     background-color: transparent;
     color: var(--text-color);
@@ -415,12 +415,12 @@ span.badge {
 .accordion:hover {
     color: var(--accent-hover);
 }
-.accordion:after {
+.accordion::after {
     content: "\002B";
     float: right;
     color: var(--accent-color);
 }
-.active:after {
+.accordion.active::after {
     content: "\2212";
 }
 .panel {

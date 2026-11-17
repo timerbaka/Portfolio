@@ -20,7 +20,7 @@
                     <a href="#about" data-i18n="nav_about">Můj příběh</a>
                     <a href="#projects" data-i18n="nav_projects">IT Projekty</a>
                     <a href="#life" data-i18n="nav_life">Život mimo IT</a>
-                    <a href="#praxe" data-i18n="nav_vision">Praxe</a>
+                    <a href="#praxe" data-i18n="nav_praxe">Praxe</a>
                 </div>
                 <div class="lang-switcher">
                     <button class="global-lang-btn active-lang" data-lang="cs">
@@ -145,7 +145,9 @@
                 <div class="achievement-card">
                     <div class="achievement-header">
                         <div class="achievement-icon">⚡</div>
-                        <h4 data-i18n="ach_5_title">Elektrotechnika, COPAG (od 2024)</h4>
+                        <h4 data-i18n="ach_5_title">
+                            Elektrotechnika, COPAG (od 2024)
+                        </h4>
                     </div>
                     <p data-i18n="ach_5_desc">
                         Ve škole se učím pájet, měřit elektrické veličiny a
@@ -155,12 +157,7 @@
             </div>
 
             <div class="radar-container">
-                <h3
-                    style="text-align: center; margin-bottom: 1rem"
-                    data-i18n="radar_title"
-                >
-                    Můj Skillset (Radar)
-                </h3>
+                <h3 class="radar-title" data-i18n="radar_title">Můj Skillset</h3>
                 <canvas id="skillsChart"></canvas>
             </div>
         </section>
@@ -169,14 +166,17 @@
             <h2 data-i18n="proj_title">Co aktuálně tvořím</h2>
             <div class="grid">
                 <div class="card tilt-card">
-                    <h3 data-i18n="proj_1_title">Vlastní AI asistent (LLM)</h3>
+                    <h3 data-i18n="proj_1_title">Osobní AI společnice (lokální LLM)</h3>
                     <p data-i18n="proj_1_desc">
-                        Aplikace s UI napsaným v
-                        <strong>C# (Avalonia MVVM)</strong>. Pod kapotou běží
-                        lokální jazykový model, se kterým komunikuji přes HTTP
-                        požadavky. Naprogramoval jsem pro něj oddělenou paměť a
-                        systém promptů. Dělám to hlavně proto, abych do hloubky
-                        pochopil architekturu LLM modelů.
+                        Webová aplikace v <strong>Pythonu (FastAPI)</strong> s
+                        chatem v prohlížeči ve stylu starého CRT monitoru.
+                        Odpovědi se streamují přes WebSocket, takže se text píše
+                        postupně. Na pozadí běží lokální jazykový model přes
+                        Ollamu (HTTP API). Má vlastní charakter, systém promptů a
+                        historii konverzací v SQLite; teď přidávám dlouhodobou
+                        paměť a ovládání chytré domácnosti. Dělám to hlavně proto,
+                        abych do hloubky pochopil, jak LLM fungují a jak se kolem
+                        nich staví aplikace.
                     </p>
                 </div>
                 <div class="card tilt-card">
@@ -189,15 +189,6 @@
                         „Žiguli“ 3x více věcí, než se tam vejde. Věci do sebe
                         narážejí, z balkonu na vás křičí matka a běží časovač.
                         Učíme se na tom práci v enginu.
-                    </p>
-                </div>
-                <div class="card tilt-card">
-                    <h3 data-i18n="proj_3_title">AR Aplikace „БуквARик“</h3>
-                    <p data-i18n="proj_3_desc">
-                        Projekt v <strong>Kotlinu</strong> pro Android. Vytvořil
-                        jsem aplikaci s rozšířenou realitou (AR). Aplikace
-                        vizualizovala složité fyzikální jevy v prostoru, aby
-                        byly snáze pochopitelné pro mě i spolužáky.
                     </p>
                 </div>
             </div>
@@ -247,10 +238,7 @@
                 </div>
             </div>
 
-            <h3
-                style="margin-top: 4rem; text-align: center"
-                data-i18n="fav_title"
-            >
+            <h3 class="fav-title" data-i18n="fav_title">
                 Co mě baví:
             </h3>
             <div class="favorites-grid">
@@ -331,83 +319,65 @@
                 </div>
             </div>
 
-            <div
-                style="
-                    margin-top: 4rem;
-                    background: var(--card-bg);
-                    border-radius: 12px;
-                    border: 1px solid #334155;
-                    padding: 0 2rem;
-                "
-            >
-                <button
-                    class="accordion"
-                    style="
-                        border-bottom: none;
-                        text-align: center;
-                        padding: 2rem 0;
-                    "
-                    data-i18n="gal_title"
-                >
+            <div class="gallery-box">
+                <button class="accordion gallery-toggle" data-i18n="gal_title">
                     Střípky z mého života
                 </button>
                 <div class="panel">
-                    <div class="panel-content" style="padding-top: 0">
-                        <div class="gallery" style="margin-top: 0">
-                            <div class="gallery-item">
-                                <img src="Photos/gds.jpeg" alt="" />
-                                <p data-i18n="gal_2">
-                                    Game Developers Session 2025
-                                </p>
-                            </div>
-                            <div class="gallery-item">
-                                <img src="Photos/Austria.jpg" alt="" />
-                                <p data-i18n="gal_3">Weltmuseum Wien</p>
-                            </div>
-                            <div class="gallery-item">
-                                <img src="Photos/France.jpeg" alt="" />
-                                <p data-i18n="gal_4">France 2024</p>
-                            </div>
-                            <div class="gallery-item">
-                                <img src="Photos/Kayak.jpg" alt="" />
-                                <p data-i18n="gal_2">A kayaking trip through Karelia 2021</p>
-                            </div>
-                            <div class="gallery-item">
-                                <img src="Photos/Cz course.jpg" alt="" />
-                                <p data-i18n="gal_3">At the end of the Czech language course, Charles University 2023</p>
-                            </div>
-                            <div class="gallery-item">
-                                <img src="Photos/222_klassmades_final.jpg" alt="" />
-                                <p data-i18n="gal_4">9th-grade graduation with the best</p>
-                            </div>
-                            <div class="gallery-item">
-                                <img src="Photos/paleontologia.jpg" alt="" />
-                                <p data-i18n="gal_1">Paleolithic excavations at the "Yudinovo", Bryansk 2021</p>
-                            </div>
-                            <div class="gallery-item">
-                                <img src="Photos/paleontologia with Sablin.jpg" alt="" />
-                                <p data-i18n="gal_2">Paleolithic excavations with paleozoologist Mikhail Sablin "Yudinovo", Bryansk 2022</p>
-                            </div>
-                            <div class="gallery-item">
-                                <img src="Photos/Fatbike.jpg" alt="" />
-                                <p data-i18n="gal_3">A fatbike trip through Karelia 2021</p>
-                            </div>
-                            <div class="gallery-item">
-                                <img src="Photos/film.PNG" alt="" />
-                                <p data-i18n="gal_4">Social awareness film “Battery”</p>
-                            </div> 
-                                <div class="gallery-item">
-                                <img src="Photos/Globus.jpg" alt="" />
-                                <p data-i18n="gal_3">The Great Gottorf Globe at the Kunstkamera, St. Petersburg</p>
-                            </div>
-                            <div class="gallery-item">
-                                <img src="Photos/3dprint.jpg" alt="" />
-                                <p data-i18n="gal_1">First 3D printer build with my best friend 2021</p>
-                            </div>
-                             <div class="gallery-item">
-                                <img src="Photos/N_Korea.jpg" alt="" />
-                                <p data-i18n="gal_1">North Korea 2025</p>
-                            </div>
+                    <div class="panel-content gallery-content">
+                        <div class="gallery">
+                            <figure class="gallery-item">
+                                <img src="Photos/gds.jpeg" alt="Game Developers Session 2025" loading="lazy" />
+                                <figcaption>Game Developers Session 2025</figcaption>
+                            </figure>
+                            <figure class="gallery-item">
+                                <img src="Photos/Austria.jpg" alt="Weltmuseum Wien" loading="lazy" />
+                                <figcaption>Weltmuseum Wien</figcaption>
+                            </figure>
+                            <figure class="gallery-item">
+                                <img src="Photos/France.jpeg" alt="France 2024" loading="lazy" />
+                                <figcaption>France 2024</figcaption>
+                            </figure>
+                            <figure class="gallery-item">
+                                <img src="Photos/Kayak.jpg" alt="A kayaking trip through Karelia 2021" loading="lazy" />
+                                <figcaption>A kayaking trip through Karelia 2021</figcaption>
+                            </figure>
+                            <figure class="gallery-item">
+                                <img src="Photos/Cz course.jpg" alt="At the end of the Czech language course, Charles University 2023" loading="lazy" />
+                                <figcaption>At the end of the Czech language course, Charles University 2023</figcaption>
+                            </figure>
+                            <figure class="gallery-item">
+                                <img src="Photos/222_klassmades_final.jpg" alt="9th-grade graduation with the best" loading="lazy" />
+                                <figcaption>9th-grade graduation with the best</figcaption>
+                            </figure>
+                            <figure class="gallery-item">
+                                <img src="Photos/paleontologia.jpg" alt="Paleolithic excavations at the &quot;Yudinovo&quot;, Bryansk 2021" loading="lazy" />
+                                <figcaption>Paleolithic excavations at the "Yudinovo", Bryansk 2021</figcaption>
+                            </figure>
+                            <figure class="gallery-item">
+                                <img src="Photos/paleontologia with Sablin.jpg" alt="Paleolithic excavations with paleozoologist Mikhail Sablin &quot;Yudinovo&quot;, Bryansk 2022" loading="lazy" />
+                                <figcaption>Paleolithic excavations with paleozoologist Mikhail Sablin "Yudinovo", Bryansk 2022</figcaption>
+                            </figure>
+                            <figure class="gallery-item">
+                                <img src="Photos/Fatbike.jpg" alt="A fatbike trip through Karelia 2021" loading="lazy" />
+                                <figcaption>A fatbike trip through Karelia 2021</figcaption>
+                            </figure>
+                            <figure class="gallery-item">
+                                <img src="Photos/film.PNG" alt="Social awareness film “Battery”" loading="lazy" />
+                                <figcaption>Social awareness film “Battery”</figcaption>
+                            </figure>
+                            <figure class="gallery-item">
+                                <img src="Photos/Globus.jpg" alt="The Great Gottorf Globe at the Kunstkamera, St. Petersburg" loading="lazy" />
+                                <figcaption>The Great Gottorf Globe at the Kunstkamera, St. Petersburg</figcaption>
+                            </figure>
+                            <figure class="gallery-item">
+                                <img src="Photos/3dprint.jpg" alt="First 3D printer build with my best friend 2021" loading="lazy" />
+                                <figcaption>First 3D printer build with my best friend 2021</figcaption>
+                            </figure>
+                            <figure class="gallery-item">
+                                <img src="Photos/N_Korea.jpg" alt="North Korea 2025" loading="lazy" />
+                                <figcaption>North Korea 2025</figcaption>
+                            </figure>
                         </div>
                     </div>
                 </div>
@@ -417,11 +387,10 @@
         <section id="praxe">
             <h2 data-i18n="prax_title">Hledám praxi 16.–29. 6. 2027</h2>
             <p data-i18n="prax_desc">
-                Jsem ve 3. ročníku oboru Mechanik elektrotechnik na COPAG
-                (Praha 9) a hledám souvislou odbornou praxi
-                <strong>16.–29. 6. 2027</strong> (10 pracovních dnů). Nejvíc mě
-                láká servis počítačů, správa IT a sítí nebo elektro. Rád se
-                naučím cokoli nového a nebojím se ani rutinní práce.
+                Jsem ve 3. ročníku oboru Mechanik elektrotechnik na COPAGu a
+                hledám souvislou odbornou praxi <strong>16.–29. 6. 2027</strong>.
+                Nejvíc mě láká servis počítačů, správa IT a sítí nebo elektro.
+                Rád se naučím cokoli nového a nebojím se ani rutinní práce.
             </p>
             <p data-i18n="prax_contact">
                 E-mail: <a href="mailto:timerbaka@gmail.com">timerbaka@gmail.com</a><br />
@@ -429,7 +398,7 @@
             </p>
         </section>
 
-        <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/chart.js@4"></script>
         <script src="script.js"></script>
         <a
             class="github-fork-ribbon right-bottom fixed"
