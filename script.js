@@ -7,9 +7,9 @@ document.addEventListener("DOMContentLoaded", () => {
         cs: {
             badge_cs: "🇨🇿 Čeština", badge_tt: "🇮🇷 Tatarština", badge_ru: "🇷🇺 Ruština", badge_en: "🇬🇧 Angličtina", badge_de: "🇩🇪 Němčina",
             hero_target: " Cíl: Čínština",
-            nav_about: "Můj příběh", nav_projects: "IT Projekty", nav_life: "Život mimo IT", nav_vision: "Proč SSPŠ",
+            nav_about: "Můj příběh", nav_projects: "IT Projekty", nav_life: "Život mimo IT", nav_vision: "Praxe",
             hero_greeting: "Ahoj, jsem budoucí ",
-            words: ["Backend Vývojář", "Student SSPŠ", "Softwarový Inženýr", "Polymat"],
+            words: ["Backend Vývojář", "Elektrotechnik", "Softwarový Inženýr", "Polymat"],
             hero_desc: "Jsem hrdý Tatar pocházející z Petrohradu. Do Česka jsem se přestěhoval v červnu 2023 a za rok a půl jsem se z nuly naučil česky. Můj otec (Cloud Engineer) mi v 9 letech dal do ruky starý MacBook Pro a řekl: <em>„Tady ho máš, zkus přijít na to, jak funguje.“</em> Od té doby je IT mým životním směrem.",
             hero_target: " Cíl: Čínština",
             about_title: "Moje IT Cesta a Vzdělání",
@@ -30,17 +30,15 @@ document.addEventListener("DOMContentLoaded", () => {
             life_4_title: " Sport a cestování", life_4_desc: "Udržuji se v kondici (chodím do posilovny, mám stříbrný odznak ruského programu fyzické zdatnosti GTO). Jezdil jsem na kajaku v Karélii a účastnil se cyklo-festivalu. Procestoval jsem mnoho zemí a mým snem je Japonsko.",
             fav_title: "Co mě baví:", fav_games: " Hry", fav_anime: " Anime", fav_books: " Knihy", fav_movies: " Hudba",
             gal_title: "Střípky z mého života",
-            vis_title: "Proč Smíchovská SPŠ?", vis_desc: "Do budoucna plánuji studovat IT na české univerzitě a stát se špičkovým backend vývojářem. Hledám školu, která je moderní, kde učí mladí odborníci z praxe a kde panuje tah na branku. Vím, že na Smíchovské SPŠ funguje systém <strong>studentských lektorů</strong> – to je přesně to, co mě zajímá. Rád lidem vysvětluji látku, kterou sám pochopím, a baví mě tvořit výukové materiály. Rád bych se do tohoto systému zapojil.",
-            faq_title: "Často kladené dotazy (Q&A)",
-            faq_1_q: "Proč chci odejít z aktuální školy (COPAG)?", faq_1_a: "Na aktuální škole jsem se naučil užitečné základy elektrotechniky a hardwaru, za což jsem rád. Plně jsem si ale uvědomil, že můj hlavní směr je čisté IT a vývoj softwaru. Na současné škole mi navíc trochu chybí proaktivní komunita studentů – chci být v prostředí, kde lidé IT oborem žijí a vzájemně se motivují, což vaše škola perfektně splňuje.",
-            faq_2_q: "Kde mám ukázky kódu a proč je můj GitHub prázdný?", faq_2_a: "To je naprosto oprávněná otázka. Doteď jsem většinu svých projektů dělal lokálně \"do šuplíku\", abych pochopil technologii. Aktuálně ale měním přístup. Jak hru v Godotu, tak C# AI asistenta nyní připravuji k nahrání na GitHub, protože si uvědomuji, že open-source a viditelné portfolio je pro moderního vývojáře základ."
+            ach_5_title: "Elektrotechnika, COPAG (od 2024)", ach_5_desc: "Ve škole se učím pájet, měřit elektrické veličiny a hledat a opravovat závady v obvodech a zařízeních.",
+            prax_title: "Hledám praxi 16.–29. 6. 2027", prax_desc: "Jsem ve 3. ročníku oboru Mechanik elektrotechnik na COPAG (Praha 9) a hledám souvislou odbornou praxi <strong>16.–29. 6. 2027</strong> (10 pracovních dnů). Nejvíc mě láká servis počítačů, správa IT a sítí nebo elektro. Rád se naučím cokoli nového a nebojím se ani rutinní práce.", prax_contact: "E-mail: <a href=\"mailto:timerbaka@gmail.com\">timerbaka@gmail.com</a><br />Ukázky kódu: <a href=\"https://github.com/timerbaka\">github.com/timerbaka</a>"
         },
         en: {
             badge_cs: "🇨🇿 Czech", badge_tt: "🇮🇷 Tatar", badge_ru: "🇷🇺 Russian", badge_en: "🇬🇧 English", badge_de: "🇩🇪 German",
             hero_target: " Goal: Chinese",
-            nav_about: "My Story", nav_projects: "IT Projects", nav_life: "Life outside IT", nav_vision: "Why SSPŠ",
+            nav_about: "My Story", nav_projects: "IT Projects", nav_life: "Life outside IT", nav_vision: "Internship",
             hero_greeting: "Hello, I'm a future ",
-            words: ["Backend Developer", "SSPŠ Student", "Software Engineer", "Polymath"],
+            words: ["Backend Developer", "Electrical Technician", "Software Engineer", "Polymath"],
             hero_desc: "I am a proud Tatar originally from St. Petersburg. I moved to the Czech Republic in June 2023 and learned Czech from scratch in a year and a half. My father (Cloud Engineer) gave me an old MacBook Pro when I was 9 and said: <em>'Here you go, figure out how it works.'</em> IT has been my life's direction ever since.",
             hero_target: " Goal: Chinese",
             about_title: "My IT Journey & Education",
@@ -61,17 +59,15 @@ document.addEventListener("DOMContentLoaded", () => {
             life_4_title: " Sports & Travel", life_4_desc: "I keep fit (gym, hold a silver GTO fitness badge). Kayaked in Karelia and joined a cycling festival. Traveled to many countries, my ultimate dream is Japan.",
             fav_title: "What I Enjoy:", fav_games: " Games", fav_anime: " Anime", fav_books: " Books", fav_movies: " Musics",
             gal_title: "Snippets of My Life",
-            vis_title: "Why Smíchovská SPŠ?", vis_desc: "I plan to study IT at a Czech university and become a top-tier backend developer. I'm looking for a modern school with young experts from the industry and strong drive. I know SSPŠ has a <strong>student lecturer</strong> system – this is exactly what interests me. I love explaining things and creating study materials.",
-            faq_title: "Frequently Asked Questions (Q&A)",
-            faq_1_q: "Why am I transferring from my current school (COPAG)?", faq_1_a: "I learned useful hardware basics there, but I realized my true passion is pure IT and software development. My current school lacks a proactive student community – I want an environment where people live and breathe IT, which SSPŠ offers.",
-            faq_2_q: "Where is my code and why is my GitHub empty?", faq_2_a: "A fair question. Until now, I built projects locally just to learn the tech. Now I'm changing my approach. I'm preparing to upload both the Godot game and C# AI assistant to GitHub, as I know open-source portfolios are essential today."
+            ach_5_title: "Electrical Engineering, COPAG (since 2024)", ach_5_desc: "At school I learn soldering, measuring electrical quantities, and finding and fixing faults in circuits and devices.",
+            prax_title: "Looking for an internship 16–29 June 2027", prax_desc: "I am a 3rd-year Electrical Technician student at COPAG (Prague 9) looking for a two-week work placement <strong>16–29 June 2027</strong> (10 working days). I am most interested in computer service, IT and network administration, or electrical work. I am eager to learn and happy to do routine tasks too.", prax_contact: "E-mail: <a href=\"mailto:timerbaka@gmail.com\">timerbaka@gmail.com</a><br />Code samples: <a href=\"https://github.com/timerbaka\">github.com/timerbaka</a>"
         },
         ru: {
             badge_cs: "🇨🇿 Чешский", badge_tt: "🇮🇷 Татарский", badge_ru: "🇷🇺 Русский", badge_en: "🇬🇧 Английский", badge_de: "🇩🇪 Немецкий",
             hero_target: " Цель: Китайский",
-            nav_about: "Мой путь", nav_projects: "IT Проекты", nav_life: "Вне экрана", nav_vision: "Почему SSPŠ",
+            nav_about: "Мой путь", nav_projects: "IT Проекты", nav_life: "Вне экрана", nav_vision: "Практика",
             hero_greeting: "Привет, я будущий ",
-            words: ["Backend Разработчик", "Студент SSPŠ", "Инженер ПО", "Полимат"],
+            words: ["Backend Разработчик", "Электротехник", "Инженер ПО", "Полимат"],
             hero_desc: "Я татарин, родом из Санкт-Петербурга. Переехал в Чехию в июне 2023 года и с нуля выучил чешский за полтора года. Мой отец (Cloud Engineer) дал мне старый MacBook Pro в 9 лет и сказал: <em>«Держи, разбирайся сам»</em>. С тех пор IT — это мой жизненный путь.",
             hero_target: " Цель: Китайский",
             about_title: "Мой путь в IT и Образование",
@@ -92,18 +88,16 @@ document.addEventListener("DOMContentLoaded", () => {
             life_4_title: " Спорт и путешествия", life_4_desc: "Держу себя в форме (зал, серебряный значок ГТО). Плавал на байдарках по Карелии. Объездил много стран (от Франции до Гонконга), моя мечта — Япония.",
             fav_title: "Что мне нравится:", fav_games: " Игры", fav_anime: " Аниме", fav_books: " Книги", fav_movies: " Музыка",
             gal_title: "Моменты из жизни",
-            vis_title: "Почему Smíchovská SPŠ?", vis_desc: "В будущем планирую изучать IT в чешском вузе и стать крутым backend разработчиком. Ищу современную школу с молодыми практиками. Я знаю, что в SSPŠ есть система <strong>студенческих лекторов</strong> – это именно то, что мне нужно. Мне нравится объяснять материал и создавать учебные пособия.",
-            faq_title: "Частые вопросы (Q&A)",
-            faq_1_q: "Почему я ухожу из текущей школы (COPAG)?", faq_1_a: "Там я выучил основы электротехники и железа. Но понял, что мое главное направление — чистый софт. В текущей школе не хватает проактивного комьюнити — я хочу быть в среде, где люди живут IT, и ваша школа это предлагает.",
-            faq_2_q: "Где мой код и почему пустой GitHub?", faq_2_a: "Справедливый вопрос. До сих пор я делал проекты «в стол» для изучения технологий. Сейчас я меняю подход и готовлю игру на Godot и C# ассистента к публикации на GitHub, так как понимаю важность open-source портфолио."
+            ach_5_title: "Электротехника, COPAG (с 2024)", ach_5_desc: "В школе учусь паять, измерять электрические величины, искать и устранять неисправности в схемах и устройствах.",
+            prax_title: "Ищу практику 16–29.06.2027", prax_desc: "Учусь на 3-м курсе по специальности «электромеханик» в COPAG (Прага 9) и ищу место для производственной практики <strong>16–29 июня 2027</strong> (10 рабочих дней). Больше всего интересуют сервис компьютеров, администрирование IT и сетей или электрика. Готов учиться новому и не боюсь рутинной работы.", prax_contact: "E-mail: <a href=\"mailto:timerbaka@gmail.com\">timerbaka@gmail.com</a><br />Примеры кода: <a href=\"https://github.com/timerbaka\">github.com/timerbaka</a>"
         },
         de: {
             hero_greeting: "Hallo, ich bin ein zukünftiger ", 
-            words: ["Backend-Entwickler", "SSPŠ-Student", "Software-Ingenieur", "Polymath"] 
+            words: ["Backend-Entwickler", "Elektrotechniker", "Software-Ingenieur", "Polymath"] 
         },
         tt: {
             hero_greeting: "Сәлам, мин булачак ", 
-            words: ["Backend Уйлап табучы", "SSPŠ Студенты", "Программа Инженеры", "Полимат"] 
+            words: ["Backend Уйлап табучы", "Электротехник", "Программа Инженеры", "Полимат"] 
         }
     };
 
